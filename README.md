@@ -30,29 +30,40 @@ redlog setup
 
 **Create issue and log time for issue**
 
-```redlog '[title]' -l [log-time-in-hours]```
+```
+redlog '[title]' -l [log-time-in-hours]
+```
 
 Example: 
 
-```redlog 'ABC-123: Fix XYZ drop-down not working' -l 1.5```
+```
+redlog 'ABC-123: Fix XYZ drop-down not working' -l 1.5
+```
 This creates a new issue by the title "ABC-123: Fix XYZ drop-down not working" and logs time spent of 1.5 hours into it.
 
-```redlog '[title]' -d [description] -l [log-time-in-hours]```
+```
+redlog '[title]' -d [description] -l [log-time-in-hours]
+```
 This adds a description for the issue (inside quotes)
 
 ### Defaults:
 
-The default tracker for issue is `Bug`. Default assignee is `<< << Me >> >>`(your user). Default status is `In Progress`.
+The default tracker for issue is "Bug". Default assignee is "<< << Me >> >>"(your user). Default status is "In Progress".
 
 You can optionally change any of these using the flags `--[bug/feature/support/design/estimation]` `--assign [assignee-username]` and `-- [in-progress/resolved/feedback/closed]`
 
 Example: 
-```redlog "Add XYZ to ABC" -l 3 --feature --assign another_username --feedback```
+```
+redlog "Add XYZ to ABC" -l 3 --feature --assign another_username --feedback
+```
 
 
 ### Changing default preferences
 
-Redlog assumes some defaults to allow for a faster user experience. You can change these at any time by running ```redlog preferences```
+Redlog assumes some defaults to allow for a faster user experience. You can change these at any time by running:
+```
+redlog preferences
+```
 
 
 ## Development
