@@ -2,7 +2,7 @@
 
 Redlog is a fast and easy-to-use CLI for the Redmine project management tool.
 
-Teams spend hours and hours every week struggling to navigate around Redmine's clunky UI. With redlog, creating issues, logging time spent, and managing your team members can be as easy as executing a single command from your terminal.
+Teams spend hours every week struggling to navigate around Redmine's clunky UI. With redlog, creating issues, logging time spent, and managing your team members can be as easy as executing a single command from your terminal.
 
 Put new Ruby code in `lib/`. To experiment with that code, run `bin/console` for an interactive prompt.
 
