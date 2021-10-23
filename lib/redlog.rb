@@ -10,10 +10,4 @@ module Redlog
   class RedlogError < StandardError; end
 
   class NoSetupError < RedlogError; end
-
-  # Your code goes here...
-
-  def self.login
-    true
-  end
 end
