@@ -1,8 +1,10 @@
 # Redlog
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/redlog`. To experiment with that code, run `bin/console` for an interactive prompt.
+Redlog is a fast and easy-to-use CLI for the Redmine project management tool.
 
-TODO: Delete this and the text above, and describe your gem
+Teams spend tens of hours every week struggling to navigate around Redmine's clunky UI. With redlog, creating issues, logging time spent, and managing your team members is as easy as pie.
+
+Put new Ruby code in `lib/`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 ## Installation
 
