@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'bundler/setup'
+require 'colorize'
+require 'optparse'
+require 'redlog'
+
+options = {}
+
+OptionParser.new do |opts|
+  opts.banner = Redlog::ASCII.banner
+  opts.banner += "Fast and easy CLI for the Redmine project management tool\n\t".colorize(:red)
+  opts.banner += "Usage: redlog '[title]' [options]\n\n".colorize(:light_magenta)
+  opts.banner += 'Options:'
+
+  opts.on('-l', '--log TIME', 'Logs time spent into issue (taken in hours)')
+
+  opts.on('-d', '--description DESC', 'Add description to issue')
+end.parse! into: options
+
+title = ARGV[0]
+raise Redlog::NoSetupError if title.nil?
+
+puts options
