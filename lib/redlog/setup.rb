@@ -39,7 +39,6 @@ module Redlog
     end
 
     def self.read_from_config(filename = '.redlog')
-      values = []
       file = File.read(filename)
       creds_hash = JSON.parse(file)
       # convert keys from string to sym
@@ -48,9 +47,6 @@ module Redlog
       raise 'Keys not present in config' unless all_cred_keys_present? creds_hash
 
       decrypt_values! creds_hash
-
-      @credential_keys.each { |key| values << creds_hash[key] }
-      values
     end
 
     private_class_method :all_cred_keys_present?,
