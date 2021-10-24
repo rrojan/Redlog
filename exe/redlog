@@ -34,6 +34,7 @@ when 'preferences'
   # TODO: Add preference change
 
 else
-  output = cli.execute(title, options)
+  creds_hash = Redlog::Setup.credentials
+  output = Redlog.redlog(title, options, creds_hash)
   cli.log output
 end
