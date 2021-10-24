@@ -6,8 +6,9 @@ require 'colorize'
 require 'optparse'
 require 'redlog'
 
-options = {}
+ARGV << '-h' if ARGV.empty? # with no arguments show banner
 
+options = {}
 OptionParser.new do |opts|
   opts.banner = Redlog::ASCII.banner
   opts.banner += "Fast and easy CLI for the Redmine project management tool\n\t".colorize(:red)
@@ -20,6 +21,19 @@ OptionParser.new do |opts|
 end.parse! into: options
 
 title = ARGV[0]
-raise Redlog::NoSetupError if title.nil?
 
-puts options
+cli = Redlog::CLI.new
+
+case title
+when 'setup'
+  creds_hash = cli.setup_prompt
+  Redlog::Setup.setup_credentials(creds_hash)
+  cli.log 'Congratulations, Redlog is set up and ready to roll!', :success
+
+when 'preferences'
+  # TODO: Add preference change
+
+else
+  output = cli.execute(title, options)
+  cli.log output
+end
