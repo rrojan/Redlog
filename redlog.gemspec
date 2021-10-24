@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Fast and easy to use CLI for the Redmine project management tool'
   spec.description   = 'Fast and easy to use CLI for the Redmine project management tool'
-  spec.homepage      = 'https://github.com/rojanrb/redlog'
+  spec.homepage      = 'https://github.com/rrojan/redlog'
   spec.license       = 'MIT'
   spec.required_ruby_version = '>= 2.6.0'
 
