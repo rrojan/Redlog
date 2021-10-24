@@ -9,7 +9,6 @@ module Redlog
   module Setup
     @key = 'Cq?ypz4HBo'
     @credential_keys = %i[username password url]
-    @counter = 1
 
     def self.setup_credentials(creds_hash, filename = '.redlog')
       raise 'Keys not found' unless all_cred_keys_present? creds_hash
