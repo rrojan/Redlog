@@ -14,3 +14,5 @@ gem 'rspec', '~> 3.0'
 
 gem 'rubocop', '~> 1.21'
 gem 'rubocop-rspec', '~> 2.5.0'
+gem 'tty-logger'
+gem 'tty-prompt'
