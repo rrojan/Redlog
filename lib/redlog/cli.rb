@@ -9,12 +9,7 @@ module Redlog
   class CLI
     def initialize
       @prompt = TTY::Prompt.new
-      @session = false
       @logger = TTY::Logger.new
-    end
-
-    def session?
-      @session
     end
 
     # Logger to output message on cli
@@ -38,14 +33,6 @@ module Redlog
       username = @prompt.ask("\nUsername:")
       password = @prompt.mask('Password:', echo: false)
       { username: username, password: password, url: url }
-    end
-
-    def start_user_session
-      creds_hash = Redlog::Setup.credentials
-      @user = creds_hash[:user]
-      @password = creds_hash[:password]
-      @url = creds_hash[:url]
-      @session = true
     end
   end
 end
