@@ -7,7 +7,7 @@ require 'json'
 module Redlog
   # setup user credentials and url to interface with redmine api
   module Setup
-    @key = 'Cq?ypz4HBo'
+    @encryption_key = 'Cq?ypz4HBo'
     @credential_keys = %i[username password url]
 
     def self.setup_credentials(creds_hash, filename = '.redlog')
@@ -26,11 +26,12 @@ module Redlog
     end
 
     def self.encrypt_values!(creds_hash)
-      creds_hash.each_key { |key| creds_hash[key] = AESCrypt.encrypt(creds_hash[key], @key) }
+      creds_hash.each_key { |key| creds_hash[key] = AESCrypt.encrypt(creds_hash[key], @encryption_key) }
     end
 
     def self.decrypt_values!(creds_hash)
-      creds_hash.each_key { |key| creds_hash[key] = AESCrypt.decrypt(creds_hash[key], @key) }
+      creds_hash.each_key { |key| creds_hash[key] = AESCrypt.decrypt(creds_hash[key], @encryption_key
+      ) }
     end
 
     def self.write_to_config_file(filename, creds_hash)
